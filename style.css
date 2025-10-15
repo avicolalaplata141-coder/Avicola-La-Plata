@@ -1,0 +1,439 @@
+/* Added background and carousel styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f5f3e7 0%, #e8e2d4 50%, #d4c5a9 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo img {
+  max-height: 80px;
+  border-radius: 10px;
+}
+
+/* Added extra large logo class for better visibility */
+.logo-extra-large {
+  max-height: 120px !important;
+  width: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel styles */
+.carousel-container {
+  max-width: 800px;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.carousel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #fff8e1, #f3e5ab);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-content {
+  flex: 1;
+  padding-left: 40px;
+  text-align: center;
+}
+
+.carousel-content h2 {
+  font-size: 2.5em;
+  color: #d32f2f;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.carousel-content p {
+  font-size: 1.4em;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #d32f2f;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(211, 47, 47, 0.7);
+}
+
+/* Original content styles */
+.oferta {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.milanesas,
+.huevos {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.milanesas:hover,
+.huevos:hover {
+  transform: translateY(-5px);
+}
+
+.oferton {
+  font-size: 2em;
+  color: #d32f2f;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.milanesas img,
+.huevos img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.precio,
+.precio-huevos {
+  font-size: 1.3em;
+  color: #333;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.flechas {
+  font-size: 2em;
+  color: #d32f2f;
+  margin: 10px 0;
+}
+
+.flechas span {
+  margin: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.flechas span:hover {
+  color: #b71c1c;
+}
+
+/* Added inventory section styles for elegant product display */
+.inventory-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #d32f2f;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-image img {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  padding: 0 10px;
+}
+
+.product-price {
+  font-size: 1.6em;
+  color: #d32f2f;
+  font-weight: bold;
+  margin: 15px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles for contact information */
+.contact-footer {
+  background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 50%, #6b3e2a 100%);
+  color: #f5f3e7;
+  padding: 50px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3 {
+  color: #f5f3e7;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-section h4 {
+  color: #e8e2d4;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.footer-section p {
+  color: #d4c5a9;
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.contact-icon {
+  margin-right: 12px;
+  font-size: 1.2em;
+  min-width: 25px;
+}
+
+.whatsapp-link {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #20b858;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(245, 243, 231, 0.3);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #d4c5a9;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .carousel-slide img {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .carousel-content {
+    padding-left: 0;
+  }
+
+  .carousel-content h2 {
+    font-size: 1.8em;
+  }
+
+  .carousel-content p {
+    font-size: 1.1em;
+  }
+
+  .oferta {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .milanesas img,
+  .huevos img {
+    width: 200px;
+    height: 150px;
+  }
+
+  /* Added responsive styles for mobile */
+  .logo-extra-large {
+    max-height: 90px !important;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    padding: 20px;
+  }
+
+  .product-image img {
+    width: 150px;
+    height: 120px;
+  }
+
+  /* Added responsive styles for footer */
+  .contact-footer {
+    padding: 40px 15px 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.5em;
+  }
+
+  .footer-section h4 {
+    font-size: 1.2em;
+  }
+
+  .contact-item {
+    font-size: 1em;
+  }
+}
